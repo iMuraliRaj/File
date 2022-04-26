@@ -1,3 +1,6 @@
+# pip install python-docx
+
+
 # Import docx NOT python-docx
 import docx
 
