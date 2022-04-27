@@ -12,6 +12,7 @@ header=doc.add_heading('Heading for the document', 0)
 # It will add the header to the document
 
 header.alignment=1
+
 # It will set the header allignment in center
 # center - 1
 # left - 0
