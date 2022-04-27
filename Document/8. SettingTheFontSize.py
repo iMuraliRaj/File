@@ -14,5 +14,5 @@ para = doc.add_paragraph().add_run('Murali')
 # Increasing size of the font
 para.font.size = Pt(30)
 
-# Adding paragrap
+
 doc.save(Utility.projectDirectory()+"8.SettingTheFontSize.docx")
