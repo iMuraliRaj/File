@@ -20,3 +20,25 @@ def projectDirectory():
     print(output)
 
     return output
+
+
+
+def projectDirectoryPath():
+
+    projectDirectory=""
+
+    fileDirectory=os.path.abspath(__file__)
+
+    fileDirectoryArray=fileDirectory.split("\\")
+
+    for i in fileDirectoryArray:
+
+        projectDirectory=projectDirectory+"\\"+i
+        if i=="File":
+             break
+
+    output=projectDirectory[1:]
+
+    print(output)
+
+    return output
