@@ -10,6 +10,8 @@ footer_para = footer.paragraphs[0]
 
 # Adding the left zoned footer
 footer_para.text ="Confidential\nAGARAM Technologies \t\tPage"
+#\t - Centre alignment
+#\t\t - Right alignment
 
 document.save(Utility.projectDirectory()+"footer.docx")
 

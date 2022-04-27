@@ -9,7 +9,9 @@ footer = section.header
 footer_para = footer.paragraphs[0]
 
 # Adding the left zoned footer
-footer_para.text ="Header Name\n Header second line\t\tHeader right page"
+footer_para.text ="\t\tMurali"
+#\t - Centre alignment
+#\t\t - Right alignment
 
 document.save(Utility.projectDirectory()+"Header.docx")
 
