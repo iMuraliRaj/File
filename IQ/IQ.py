@@ -47,6 +47,17 @@ contentsHeading.bold=True
 contentsHeading.font.color.rgb = RGBColor(6, 4, 255)
 contentsHeading.font.name = 'Cambria'
 
+doc.add_paragraph('  Purpose',  style='List Number')
+doc.add_paragraph('  Scope',  style='List Number')
+doc.add_paragraph('  Validation Methodology',  style='List Number')
+doc.add_paragraph('  Acronyms',  style='List Number')
+doc.add_paragraph('  System Description',  style='List Number')
+doc.add_paragraph('  Responsibilities',  style='List Number')
+doc.add_paragraph('  Test Plan',  style='List Number')
+doc.add_paragraph('  Qualification Support Environment screen shots',  style='List Number')
+doc.add_paragraph('  Deficiency and Change Request Log',  style='List Number')
+doc.add_paragraph('  Document Approval',  style='List Number')
+
 
 
 source='D:\\iMuraliRaj\\GitHub\\File\\IQ\\Installation Qulification.docx'

@@ -1,16 +1,46 @@
-# This is a sample Python script.
+import docx
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# Create an instance of a word document
+doc = docx.Document()
 
+# Add a Title to the document 
+doc.add_heading('GeeksForGeeks', 0)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+# Adding list of style name 'List Number'
+doc.add_heading('Style: List Number', 3)
+# Adding points to the list named 'List Number'
+doc.add_paragraph('The first item in an ordered list.',
+                  style='List Number')
 
+doc.add_paragraph('The second item in an ordered list.',
+                  style='List Number')
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+doc.add_paragraph('The third item in an ordered list.',
+                  style='List Number')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# Adding list of style name 'List Number 2'
+doc.add_heading('Style: List Number 2', 3)
+# Adding points to the list named 'List Number 2'
+doc.add_paragraph('The first item in an ordered list.',
+                  style='List Number 2')
+
+doc.add_paragraph('The second item in an ordered list.',
+                  style='List Number 2')
+
+doc.add_paragraph('The third item in an ordered list.',
+                  style='List Number 2')
+
+# Adding list of style name 'List Number 3'
+doc.add_heading('Style: List Number 3', 3)
+# Adding points to the list named 'List Number 3'
+doc.add_paragraph('The first item in an ordered list.',
+                  style='List Number 3')
+
+doc.add_paragraph('The second item in an ordered list.',
+                  style='List Number 3')
+
+doc.add_paragraph('The third item in an ordered list.',
+                  style='List Number 3')
+
+# Now save the document to a location 
+doc.save('gfg.docx')
