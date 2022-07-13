@@ -13,6 +13,6 @@ footer_para.text ="\t\tMurali"
 #\t - Centre alignment
 #\t\t - Right alignment
 
-document.save(Utility.projectDirectory()+"Header.docx")
+document.save("Header.docx")
 
 

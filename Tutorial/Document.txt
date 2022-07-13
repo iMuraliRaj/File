@@ -1,1 +1,9 @@
 Create a Document:
+
+Step 1: Install the package named python-docx, pip install python-docx
+
+Step 2: Import the package named import docx, import docx
+
+Step 3: Create an object for the Document class, doc=docx.Document()
+
+Step 4: Save the document with mentioned name, doc.save("File.docx")

@@ -21,4 +21,4 @@ header.alignment=2
 # Right - 2
 # Justify - 3
 
-doc.save("E:\\Bugs\\file.docx")
+doc.save("E:\\docx\\file.docx")
