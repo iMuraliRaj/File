@@ -47,17 +47,37 @@ contentsHeading.bold=True
 contentsHeading.font.color.rgb = RGBColor(6, 4, 255)
 contentsHeading.font.name = 'Cambria'
 
-doc.add_paragraph('  Purpose',  style='List Number')
-doc.add_paragraph('  Scope',  style='List Number')
-doc.add_paragraph('  Validation Methodology',  style='List Number')
-doc.add_paragraph('  Acronyms',  style='List Number')
-doc.add_paragraph('  System Description',  style='List Number')
-doc.add_paragraph('  Responsibilities',  style='List Number')
-doc.add_paragraph('  Test Plan',  style='List Number')
-doc.add_paragraph('  Qualification Support Environment screen shots',  style='List Number')
-doc.add_paragraph('  Deficiency and Change Request Log',  style='List Number')
+purpose=doc.add_paragraph('  Purpose\n',  style='List Number')
+doc.add_paragraph('  Purpose',  style='List Number 2')
+doc.add_paragraph('  Scope\n',  style='List Number')
+doc.add_paragraph('  Validation Methodology\n',  style='List Number')
+doc.add_paragraph('  Acronyms\n',  style='List Number')
+doc.add_paragraph('  System Description\n',  style='List Number')
+doc.add_paragraph('  Introduction\n',  style='List Number 2')
+doc.add_paragraph('  Work Flow\n',  style='List Number 2')
+doc.add_paragraph('  Responsibilities\n',  style='List Number')
+doc.add_paragraph('  Test Plan\n',  style='List Number')
+doc.add_paragraph('  Prerequisites Review\n',  style='List Number 2')
+doc.add_paragraph('  Computer System Specification and Power Supply\n',  style='List Number 2')
+doc.add_paragraph('  Software Review\n',  style='List Number 2')
+doc.add_paragraph('  Qualis Installation Verification\n',  style='List Number 2')
+doc.add_paragraph('  Verifying components of the Qualis\n',  style='List Number 2')
+
+doc.add_paragraph('  Qualification Support Environment screen shots\n',  style='List Number')
+doc.add_paragraph('  Deficiency and Change Request Log\n',  style='List Number')
 doc.add_paragraph('  Document Approval',  style='List Number')
 
+doc.add_page_break()
+section = doc.sections[0]
+header = section.header
+header_para = header.paragraphs[0]
+
+# Adding the left zoned footer
+header_para.text ="\tINSTALLATION QUALIFICATION"
+
+table = header.add_table(1, 3, Inches(10))
+row = table.add_row().cells
+row[0].text = "INSTALL"
 
 
 source='D:\\iMuraliRaj\\GitHub\\File\\IQ\\Installation Qulification.docx'
