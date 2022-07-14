@@ -94,6 +94,12 @@ contentsHeading=doc.add_paragraph().add_run('          The objective of this pro
 contentsHeading.font.size = Pt(11)
 contentsHeading.font.name = 'Arial'
 
+headerParagraph('1.1.   Installation Qualification')
+
+contentsHeading=doc.add_paragraph().add_run('          The Installation Qualification consists of tests to ensure that the components of the Qualis \n          LIMS program have been properly installed. Specific test objectives and acceptance criteria \n           are defined.. ')
+contentsHeading.font.size = Pt(11)
+contentsHeading.font.name = 'Arial'
+
 
 source='D:\\iMuraliRaj\\GitHub\\File\\IQ\\Installation Qulification.docx'
 doc.save(source)
