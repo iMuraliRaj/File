@@ -111,7 +111,7 @@ contentsHeading=doc.add_paragraph().add_run('          This protocol specifies t
                                             '          be conducted under the appropriate system change control procedure. Parts of the protocol \n'
                                             '          may be used for reconfirmation or revalidation, if necessary. \n')
 contentsHeading.font.size = Pt(11)
-
+contentsHeading.font.name = 'Arial'
 
 source='D:\\iMuraliRaj\\GitHub\\File\\IQ\\Installation Qulification.docx'
 doc.save(source)
