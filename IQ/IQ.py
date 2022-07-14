@@ -87,6 +87,12 @@ def headerParagraph(content):
     contentsHeading.font.color.rgb = RGBColor(6, 4, 255)
     contentsHeading.font.name = 'Cambria'
 
+headerParagraph('1. Purpose')
+
+
+contentsHeading=doc.add_paragraph().add_run('          The objective of this protocol is to verify the installation of the Qualis LIMS program and to \n          verify that it performs its intended function in a consistent and reproducible manner. Specific \n           test objectives and acceptance criteria are defined. ')
+contentsHeading.font.size = Pt(11)
+contentsHeading.font.name = 'Arial'
 
 
 source='D:\\iMuraliRaj\\GitHub\\File\\IQ\\Installation Qulification.docx'
