@@ -110,6 +110,7 @@ contentsHeading=doc.add_paragraph().add_run('          This protocol specifies t
                                             '          Changes made to the software and/or computer systems after validation is completed must  \n'
                                             '          be conducted under the appropriate system change control procedure. Parts of the protocol \n'
                                             '          may be used for reconfirmation or revalidation, if necessary. \n')
+contentsHeading.font.size = Pt(11)
 
 
 source='D:\\iMuraliRaj\\GitHub\\File\\IQ\\Installation Qulification.docx'
