@@ -79,6 +79,14 @@ row = table.add_row().cells
 row[0].text = "INSTALL"
 
 
+def headerParagraph(content):
+    # Adding a paragraph
+    contentsHeading = doc.add_paragraph().add_run(content)
+    contentsHeading.font.size = Pt(14)
+    contentsHeading.bold = True
+    contentsHeading.font.color.rgb = RGBColor(6, 4, 255)
+    contentsHeading.font.name = 'Cambria'
+
 
 
 source='D:\\iMuraliRaj\\GitHub\\File\\IQ\\Installation Qulification.docx'
