@@ -100,6 +100,17 @@ contentsHeading=doc.add_paragraph().add_run('          The Installation Qualific
 contentsHeading.font.size = Pt(11)
 contentsHeading.font.name = 'Arial'
 
+headerParagraph('2.  Scope')
+
+contentsHeading=doc.add_paragraph().add_run('          This protocol specifies the Installation Qualification tests that are to be applied to the Qualis \n'
+                                            '          LIMS program, which will be used in a cGMP/cGLP environment, for the purpose of verifying \n'
+                                            '          proper installation. The Qualis LIMS is installed to manage Laboratory workflows and data \n'
+                                            '          proper installation. The Qualis LIMS is installed to manage Laboratory workflows and data \n'
+                                            '          proper installation. The Qualis LIMS is installed to manage Laboratory workflows and data \n'
+                                            '          Changes made to the software and/or computer systems after validation is completed must  \n'
+                                            '          be conducted under the appropriate system change control procedure. Parts of the protocol \n'
+                                            '          may be used for reconfirmation or revalidation, if necessary. \n')
+
 
 source='D:\\iMuraliRaj\\GitHub\\File\\IQ\\Installation Qulification.docx'
 doc.save(source)
