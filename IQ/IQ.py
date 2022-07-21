@@ -112,7 +112,25 @@ contentsHeading=doc.add_paragraph().add_run('          This protocol specifies t
                                             '          may be used for reconfirmation or revalidation, if necessary. \n')
 contentsHeading.font.size = Pt(11)
 contentsHeading.font.name = 'Arial'
+doc.add_page_break()
 
+headerParagraph('8. Qualification Support Environment screen shots')
+
+
+
+def heading(content):
+    contentsHeading = doc.add_paragraph().add_run(content)
+    contentsHeading.font.size = Pt(11)
+    contentsHeading.font.name = 'Calibri'
+    contentsHeading.bold=True
+
+heading("Tomcat")
+
+doc.add_picture('D:\\BUILD\\IRSHA\\New folder\\Tomcat.png',width=Inches(7), height=Inches(3.5))
+
+heading("ADS Services")
+
+doc.add_picture('D:\\BUILD\\IRSHA\\New folder\\services.png',width=Inches(7), height=Inches(3.5))
 source='D:\\iMuraliRaj\\GitHub\\File\\IQ\\Installation Qulification.docx'
 doc.save(source)
 dest = shutil.copyfile(source, "C:\\Users\\Murali.R\\Desktop\\IQ.docx")
