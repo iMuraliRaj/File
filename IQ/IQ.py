@@ -205,9 +205,36 @@ documentApprovalTable = doc.add_table(rows=6, cols=2 ,style="Table Grid")
 for cell in documentApprovalTable.columns[0].cells:
     cell.width = Inches(7)
 
+backround=""
+
+shading_elm_4 = parse_xml(r'<w:shd {} w:fill="#c1c1c1"/>'.format(nsdecls('w')))
+documentApprovalTable.rows[0].cells[0]._tc.get_or_add_tcPr().append(shading_elm_4)
+
+shading_elm_7 = parse_xml(r'<w:shd {} w:fill="#c1c1c1"/>'.format(nsdecls('w')))
+documentApprovalTable.rows[0].cells[1]._tc.get_or_add_tcPr().append(shading_elm_7)
 
 
+shading_elm_5 = parse_xml(r'<w:shd {} w:fill="#c1c1c1"/>'.format(nsdecls('w')))
+documentApprovalTable.rows[2].cells[0]._tc.get_or_add_tcPr().append(shading_elm_5)
 
+shading_elm_8 = parse_xml(r'<w:shd {} w:fill="#c1c1c1"/>'.format(nsdecls('w')))
+documentApprovalTable.rows[2].cells[1]._tc.get_or_add_tcPr().append(shading_elm_8)
+
+shading_elm_6 = parse_xml(r'<w:shd {} w:fill="#c1c1c1"/>'.format(nsdecls('w')))
+documentApprovalTable.rows[4].cells[0]._tc.get_or_add_tcPr().append(shading_elm_6)
+
+shading_elm_9 = parse_xml(r'<w:shd {} w:fill="#c1c1c1"/>'.format(nsdecls('w')))
+documentApprovalTable.rows[4].cells[1]._tc.get_or_add_tcPr().append(shading_elm_9)
+
+
+sug="""
+
+Name:  Suganya. P
+
+Printed 
+"""
+
+row = table.rows[0].cells
 
 
 source='D:\\iMuraliRaj\\GitHub\\File\\IQ\\Installation Qulification.docx'
