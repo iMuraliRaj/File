@@ -2,6 +2,10 @@
 import shutil
 from docx.shared import Pt, RGBColor
 import docx
+from docx.oxml.ns import nsdecls
+from docx.oxml import parse_xml
+
+
 from docx.shared import Inches, Cm
 doc = docx.Document()
 
@@ -131,6 +135,81 @@ doc.add_picture('D:\\BUILD\\IRSHA\\New folder\\Tomcat.png',width=Inches(7), heig
 heading("ADS Services")
 
 doc.add_picture('D:\\BUILD\\IRSHA\\New folder\\services.png',width=Inches(7), height=Inches(3.5))
+
+
+
+heading("IIS")
+
+doc.add_picture('D:\\BUILD\\IRSHA\\New folder\\IIS.png',width=Inches(7), height=Inches(3.5))
+
+heading("Email")
+
+doc.add_picture('D:\\BUILD\\IRSHA\\New folder\\Email.png',width=Inches(7), height=Inches(3.5))
+
+doc.add_page_break()
+
+heading("Application")
+
+doc.add_picture('D:\\BUILD\\IRSHA\\New folder\\Application.png',width=Inches(7), height=Inches(3.5))
+
+headerParagraph('\n\n9.  Deficiency and Change Request Log')
+
+deficiency="""In the following Deficiency Log, record the deviation numbers for any created deviation reports. Include a brief description of the issue. When the deviation is resolved and approved, write the date resolved."""
+
+doc.add_paragraph().add_run(deficiency)
+
+table = doc.add_table(rows=7, cols=3 ,style="Table Grid")
+
+shading_elm_1 = parse_xml(r'<w:shd {} w:fill="#9b9b9b"/>'.format(nsdecls('w')))
+table.rows[0].cells[0]._tc.get_or_add_tcPr().append(shading_elm_1)
+
+shading_elm_2 = parse_xml(r'<w:shd {} w:fill="#9b9b9b"/>'.format(nsdecls('w')))
+table.rows[0].cells[1]._tc.get_or_add_tcPr().append(shading_elm_2)
+
+shading_elm_3 = parse_xml(r'<w:shd {} w:fill="#9b9b9b"/>'.format(nsdecls('w')))
+table.rows[0].cells[2]._tc.get_or_add_tcPr().append(shading_elm_3)
+
+for cell in table.columns[0].cells:
+    cell.width = Inches(2)
+
+for cell in table.columns[1].cells:
+    cell.width = Inches(4)
+
+for cell in table.rows:
+    cell.height =  Cm(0.7)
+
+table.rows[0].height = Cm(1)
+
+row = table.rows[0].cells
+
+row[0].add_paragraph().add_run("Deficiency number\n").bold=True
+row[1].add_paragraph().add_run('Brief description').bold=True
+row[2].add_paragraph().add_run('Date resolved').bold=True
+
+doc.add_page_break()
+
+headerParagraph('10.  Document Approval')
+
+
+def content(content):
+    contentsHeading = doc.add_paragraph().add_run(content)
+    contentsHeading.font.size = Pt(10)
+    contentsHeading.font.name = 'Calibri'
+
+content("    The Operational Qualification document has been reviewed and approved.")
+
+
+
+documentApprovalTable = doc.add_table(rows=6, cols=2 ,style="Table Grid")
+
+for cell in documentApprovalTable.columns[0].cells:
+    cell.width = Inches(7)
+
+
+
+
+
+
 source='D:\\iMuraliRaj\\GitHub\\File\\IQ\\Installation Qulification.docx'
 doc.save(source)
 dest = shutil.copyfile(source, "C:\\Users\\Murali.R\\Desktop\\IQ.docx")
