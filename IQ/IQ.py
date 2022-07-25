@@ -106,18 +106,39 @@ contentsHeading.font.name = 'Arial'
 
 headerParagraph('2.  Scope')
 
-contentsHeading=doc.add_paragraph().add_run('          This protocol specifies the Installation Qualification tests that are to be applied to the Qualis \n'
-                                            '          LIMS program, which will be used in a cGMP/cGLP environment, for the purpose of verifying \n'
-                                            '          proper installation. The Qualis LIMS is installed to manage Laboratory workflows and data \n'
-                                            '          proper installation. The Qualis LIMS is installed to manage Laboratory workflows and data \n'
-                                            '          proper installation. The Qualis LIMS is installed to manage Laboratory workflows and data \n'
-                                            '          Changes made to the software and/or computer systems after validation is completed must  \n'
-                                            '          be conducted under the appropriate system change control procedure. Parts of the protocol \n'
-                                            '          may be used for reconfirmation or revalidation, if necessary. \n')
+scopeContent="""        This protocol specifies the Installation Qualification tests that are to be applied to the Qualis LIMS program, which will be used in a cGMP/cGLP environment, for the purpose of verifying proper installation. The Qualis LIMS is installed to manage Laboratory workflows and data generated in process over the LAN to a database. Within the scope of this protocol are the activities and tasks that must be performed throughout the qualification process.
+Changes made to the software and/or computer systems after validation is completed must be conducted under the appropriate system change control procedure. Parts of the protocol may be used for reconfirmation or revalidation, if necessary."""
+
+contentsHeading=doc.add_paragraph().add_run(scopeContent)
 contentsHeading.font.size = Pt(11)
 contentsHeading.font.name = 'Arial'
-doc.add_page_break()
 
+def content(content):
+    contentsHeading=doc.add_paragraph().add_run(content)
+    contentsHeading.font.size = Pt(11)
+    contentsHeading.font.name = 'Arial'
+
+headerParagraph("3. Validation Methodology")
+
+validationContent="""Tests within this protocol have been designed to verify that all-important elements of the Qualis LIMS program installation adhere to the requirements set forth by the manufacturer, when successfully completed. For each installation test in this protocol, a cover sheet is provided to define the test objective, procedure, and acceptance criteria. Following each cover sheet are the data sheets. These data sheets outline the information that must be verified and/or documented, as well as provide space for recording additional information. The information recorded on the test data sheets combined with referenced supporting test documentation provides a method whereby adherence to the test acceptance criteria can be verified.
+\nAny deviation from the specified acceptance criteria/expected results must be recorded on a deviation report."""
+
+content(validationContent)
+
+doc.add_page_break()
+headerParagraph('4. Acronyms')
+
+acronymsTable = doc.add_table(rows=24, cols=2 ,style="Table Grid")
+acronymsTableRows = acronymsTable.rows[0].cells
+acronymsTableRows[0].add_paragraph().add_run("Acronym/Initials\n").bold=True
+acronymsTableRows[1].add_paragraph().add_run("Meaning\n").bold=True
+
+
+row[0].add_paragraph().add_run("Deficiency number\n").bold=True
+row[1].add_paragraph().add_run('Brief description').bold=True
+
+
+doc.add_page_break()
 headerParagraph('8. Qualification Support Environment screen shots')
 
 
@@ -207,35 +228,85 @@ for cell in documentApprovalTable.columns[0].cells:
 
 backround=""
 
-shading_elm_4 = parse_xml(r'<w:shd {} w:fill="#c1c1c1"/>'.format(nsdecls('w')))
+shading_elm_4 = parse_xml(r'<w:shd {} w:fill="#e7e7e7"/>'.format(nsdecls('w')))
 documentApprovalTable.rows[0].cells[0]._tc.get_or_add_tcPr().append(shading_elm_4)
 
-shading_elm_7 = parse_xml(r'<w:shd {} w:fill="#c1c1c1"/>'.format(nsdecls('w')))
+shading_elm_7 = parse_xml(r'<w:shd {} w:fill="#e7e7e7"/>'.format(nsdecls('w')))
 documentApprovalTable.rows[0].cells[1]._tc.get_or_add_tcPr().append(shading_elm_7)
 
 
-shading_elm_5 = parse_xml(r'<w:shd {} w:fill="#c1c1c1"/>'.format(nsdecls('w')))
+shading_elm_5 = parse_xml(r'<w:shd {} w:fill="#e7e7e7"/>'.format(nsdecls('w')))
 documentApprovalTable.rows[2].cells[0]._tc.get_or_add_tcPr().append(shading_elm_5)
 
-shading_elm_8 = parse_xml(r'<w:shd {} w:fill="#c1c1c1"/>'.format(nsdecls('w')))
+shading_elm_8 = parse_xml(r'<w:shd {} w:fill="#e7e7e7"/>'.format(nsdecls('w')))
 documentApprovalTable.rows[2].cells[1]._tc.get_or_add_tcPr().append(shading_elm_8)
 
-shading_elm_6 = parse_xml(r'<w:shd {} w:fill="#c1c1c1"/>'.format(nsdecls('w')))
+shading_elm_6 = parse_xml(r'<w:shd {} w:fill="#e7e7e7"/>'.format(nsdecls('w')))
 documentApprovalTable.rows[4].cells[0]._tc.get_or_add_tcPr().append(shading_elm_6)
 
-shading_elm_9 = parse_xml(r'<w:shd {} w:fill="#c1c1c1"/>'.format(nsdecls('w')))
+shading_elm_9 = parse_xml(r'<w:shd {} w:fill="#e7e7e7"/>'.format(nsdecls('w')))
 documentApprovalTable.rows[4].cells[1]._tc.get_or_add_tcPr().append(shading_elm_9)
 
 
-sug="""
+preparedByName="""Name:  Suganya. P
 
-Name:  Suganya. P
-
-Printed 
+Printed Name: 
 """
 
-row = table.rows[0].cells
+preparedByDate="""Date: 21.04.2022
 
+Implementation Engineer
+Agaram Technologies """
+
+
+
+row = documentApprovalTable.rows[0].cells
+row[0].text="Prepared by"
+
+
+
+row2=documentApprovalTable.rows[1].cells
+row2[0].add_paragraph().add_run(preparedByName)
+row2[1].add_paragraph().add_run(preparedByDate)
+
+row = documentApprovalTable.rows[2].cells
+row[0].text="Reviewed by"
+
+reviewedBy="""Name: Satish P
+
+Printed Name: """
+
+
+
+reviewedByDate="""Date: 22.04.2022
+
+Manager - Implementations
+Agaram Technologies"""
+
+row = documentApprovalTable.rows[3].cells
+row[0].add_paragraph().add_run(reviewedBy)
+row[1].add_paragraph().add_run(reviewedByDate)
+
+
+approvedBy="""Name: 
+
+Printed Name: 
+"""
+
+
+approvedByDate="""Date: 
+
+LIMS Site Admin
+NIBSC
+"""
+
+
+row = documentApprovalTable.rows[4].cells
+row[0].text="Approved by"
+
+row = documentApprovalTable.rows[5].cells
+row[0].add_paragraph().add_run(approvedBy)
+row[1].add_paragraph().add_run(approvedByDate)
 
 source='D:\\iMuraliRaj\\GitHub\\File\\IQ\\Installation Qulification.docx'
 doc.save(source)
