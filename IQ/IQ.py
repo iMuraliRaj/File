@@ -127,21 +127,13 @@ content(validationContent)
 
 doc.add_page_break()
 headerParagraph('4. Acronyms')
+table = doc.add_table(rows=24, cols=2 ,style="Table Grid")
+row = table.rows[0].cells
 
-acronymsTable = doc.add_table(rows=24, cols=2 ,style="Table Grid")
-acronymsTableRows = acronymsTable.rows[0].cells
-acronymsTableRows[0].add_paragraph().add_run("Acronym/Initials\n").bold=True
-acronymsTableRows[1].add_paragraph().add_run("Meaning\n").bold=True
-
-
-row[0].add_paragraph().add_run("Deficiency number\n").bold=True
-row[1].add_paragraph().add_run('Brief description').bold=True
-
-
+row[0].add_paragraph().add_run("Acronyms\n").bold=True
+row[1].add_paragraph().add_run('Meaning').bold=True
 doc.add_page_break()
 headerParagraph('8. Qualification Support Environment screen shots')
-
-
 
 def heading(content):
     contentsHeading = doc.add_paragraph().add_run(content)
